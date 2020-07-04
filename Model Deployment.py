@@ -31,5 +31,12 @@ y = [1.95, 1.95, 2.05, 3.05, 3.05, 3.10, 3.15]
 # Test the deployed model
 print(client.query('clustering', x, y))
 
+# Tableau code for calculated field:
+# SCRIPT_INT("
+# return tabpy.query('clustering', _arg1, _arg2)['response']
+# ",
+# SUM([Profit]), SUM([Sales])
+# )
+
 # To delete the deployed model from TabPy server
 # client.remove('clustering')
